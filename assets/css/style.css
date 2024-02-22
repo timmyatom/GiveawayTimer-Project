@@ -1,0 +1,116 @@
+body{
+    background-color: #12151e;
+}
+
+
+.container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; 
+            text-align: center;
+}
+  
+.square1 {
+    width: 500px;
+    height: 300px;
+    background-color: #66FCF1;
+    margin: 10px;
+    border-radius: 50px;
+}
+
+.square1 img{
+    width: 100%;
+    height: 100%;
+    border-radius: 90px;
+}
+  
+.square2 {
+    width: 500px;
+    height: 300px;
+    margin: 10px;
+}
+
+/* Countdown container */
+.countdown {
+    display: flex;
+    justify-content: space-around;
+    font-family: Arial, sans-serif;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+        .container {
+            flex-direction: column; /* Change to column layout on smaller screens */
+        }
+}
+
+@media only screen and (max-width: 768px) {
+  .div {
+    width: 100%; /* Set the width to 100% for one div per row */
+    float: none; /* Remove the float to stack the divs */
+  }
+}
+
+/* Media query for larger screens */
+@media (min-width: 601px) {
+        .container {
+            flex-direction: row; /* Change to row layout on larger screens */
+        }
+}
+
+/* Styling for the squares */
+        .square1, .square2 {
+            width: 80%;
+            max-width: 500px;
+            margin: 10px;
+        }
+
+        /* Order of the squares */
+        .square1 {
+            order: 1;
+        }
+
+        .square2 {
+            order: 2;
+        }
+        
+        /* Logo styling */
+        img {
+            display: block;
+            margin: 0 auto; /* Center the logo horizontally */
+        }
+
+/* Individual time units */
+.time {
+    text-align: center;
+    margin: 0.5em;
+}
+
+/* Large numbers */
+.time span {
+    font-size: 1.1em;
+    display: block;
+    background-color:#66FCF1;
+    color: #12151e;
+    height: 50px;
+    width: 50px;
+    margin-top: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}
+
+/* Small text (days, hours, etc.) */
+.smalltext {
+    padding-top: 0.5em;
+    font-size: 0.5em;
+    color: azure;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
