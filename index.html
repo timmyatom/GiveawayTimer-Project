@@ -19,10 +19,10 @@
         <div class="square2">
            <center> 
                 <h1 style="color: #66FCF1; font-family: Georgia, 'Times New Roman', Times, serif;">NEW LAPTOP GIVEAWAY</h1>
-                <h4 style="color: azure; font-family: Georgia, 'Times New Roman', Times, serif;">The Giveaway ends on turesday, April 16 at 12:00 Mid-Night</h4>
+                <h4 style="color: azure; font-family: Georgia, 'Times New Roman', Times, serif;">The Giveaway ends very Soon!!!</h4>
                 <p style="color: azure; font-family: Georgia, 'Times New Roman', Times, serif;">
-                    To enter the giveaway, participants are required to follow Apex Designs on their social media platforms, like and share the giveaway post, and tag a friend in the comments. The winner will be chosen randomly and announced on a specified date.
-                    
+                    To enter the giveaway, participants are required to follow Apex Designs on their social media platforms, like and share the giveaway post, and tag a friend in the comments.
+                    The winner will be chosen randomly.
                 </p>
             </center>
             
@@ -49,30 +49,36 @@
     </div>
 
     <script>
-        // Example: Set a target date (adjust as needed))
-        const targetDate = new Date('2024-04-16T00:00:00').getTime();
+       const targetDate = new Date('2024-04-16T00:00:00').getTime();
+let timeRemaining = 10 * 24 * 60 * 60 * 1000; // 10 days in milliseconds
 
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const timeRemaining = targetDate - now;
+function updateCountdown() {
+    timeRemaining -= 1000; // Subtract 1 second
 
-            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+    if (timeRemaining < 0) {
+        timeRemaining = 10 * 24 * 60 * 60 * 1000; // This one is to Reset to 10 days in milliseconds
+    }
+    const finalDate = new Date(targetDate);
+    const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-            document.getElementById('days').textContent = days.toString().padStart(2, '0');
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-        }
+    document.getElementById('days').textContent = days.toString().padStart(2, '0');
+    document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+    document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+    document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+}
 
-        // Initial call and update every second
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
+// Initial call and update every second
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
     </script>
 
 </body>
 </html>
+
+
 
 
